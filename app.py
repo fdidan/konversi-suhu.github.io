@@ -23,25 +23,25 @@ def getNum(x):
             return temp
 
 def formula(x, y):
-    if x == 'celcius':
-        fahrenheit = 'Fahrenheit = ' + str(y * 1.8 + 32)
+    if x == 'Celcius':
+        fahrenheit = 'Fahrenheit = ' + str(y * (9/5) + 32)
         kelvin = 'Kelvin = ' + str(y + 273)
-        reamur = 'Reamur = ' + str(0.8 * y)
+        reamur = 'Reamur = ' + str((4/5) * y)
         return fahrenheit, kelvin, reamur
-    elif x == 'fahrenheit':
-        celcius = 'Celcius = ' + str(5/9 * (y - 32))
-        kelvin = 'Kelvin = ' + str(5/9 * (y - 32) + 273)
-        reamur = 'Reamur = ' + str(4/9 * (y - 32))
+    elif x == 'Fahrenheit':
+        celcius = 'Celcius = ' + str((5/9) * (y - 32))
+        kelvin = 'Kelvin = ' + str((5/9) * (y - 32) + 273)
+        reamur = 'Reamur = ' + str((4/9) * (y - 32))
         return celcius, kelvin, reamur
-    elif x == 'kelvin':
-        celcius = 'Celcius = ' + str(5/9 * (y - 32))
-        fahrenheit = 'Fahrenheit = ' + str(5/9 * (y - 32) + 273)
-        reamur = 'Reamur = ' + str(4/9 * (y - 32))
+    elif x == 'Kelvin':
+        celcius = 'Celcius = ' + str(y - 273)
+        fahrenheit = 'Fahrenheit = ' + str((9/5) * (y - 273) + 32)
+        reamur = 'Reamur = ' + str((4/5) * (y - 273))
         return celcius, fahrenheit, reamur
-    elif x == 'reamur':
-        celcius = 'Celcius = ' + str(5/9 * (y - 32))
-        fahrenheit = 'Fahrenheit = ' + str(5/9 * (y - 32) + 273)
-        kelvin = 'Reamur = ' + str(4/9 * (y - 32))
+    elif x == 'Reamur':
+        celcius = 'Celcius = ' + str((5/4) * y)
+        fahrenheit = 'Fahrenheit = ' + str((9/4) * y + 273)
+        kelvin = 'Kelvin = ' + str((5/4) * y + 273)
         return celcius, fahrenheit, kelvin
     else :        
         return 0
