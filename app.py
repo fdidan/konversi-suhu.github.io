@@ -1,6 +1,6 @@
 from browser import document, console, alert
 
-input = document['suhu']
+input = document['input']
 button = document['btn']
 output0 = document['output0']
 output1 = document['output1']
