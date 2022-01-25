@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.js" integrity="sha512-Dr8IR/2fk/pBmngFLduWN5Ys/t7lcPxGgLCulHdTdgDrDRnGb+ANMxGXq+DKVN87jom+N3BrzzI476Pf98RReA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython_stdlib.js" integrity="sha512-kMRN6F4Yq4sNLbPG2lH3EO9n776JHHZub+UWogDxVjh9uTnoVo3wtN/rnQD4C4/AZtqI2zQdvdouGAAxOGwNeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.2/brython.js" integrity="sha512-ZyGKn+akFwl1HFxnnp8ZAb1lLeMywDTFFdI38R07l7xBeZ8igvwDXAuQgiZqV7UOqJVPZPlNG1gY6cNUwHTzUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.2/brython_stdlib.js" integrity="sha512-meZidFhbPKkaFK504w0Ns0JlXgEfLCEzV8WgJnyv2A4fn2I23xvshuXiF+74jxuQV85VbOrzsIu/2Eaz/0MqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Konversi Suhu</title>
 </head>
 <body onload="brython()">
     <header>
         <h1>Konversi Suhu</h1>
     </header>
-    <select name="jenis-suhu" id="select">
+    <select id="select">
         <option value="Celcius">Celcius</option>
         <option value="Fahrenheit">Fahrenheit</option>
         <option value="Kelvin">Kelvin</option>
@@ -23,71 +23,6 @@
     <div id="output0"></div>
     <div id="output1"></div>
     <div id="output2"></div>
-    <script type="text/python">
-        from browser import document, console, alert
-
-        input = document['input']
-        button = document['btn']
-        output0 = document['output0']
-        output1 = document['output1']
-        output2 = document['output2']
-        select = document['select']
-
-        def getNum(x):
-            temp = x
-            try:
-                temp = int(x)
-            except ValueError:
-                temp = float(x)
-            finally:
-                if temp != '' and type(temp) is str:
-                    alert('Harap masukkan angka')
-                    temp = ''
-                    input.value = temp
-                    return temp
-                else:
-                    return temp
-
-        def formula(x, y):
-            if x == 'Celcius':
-                fahrenheit = 'Fahrenheit = ' + str(y * (9/5) + 32)
-                kelvin = 'Kelvin = ' + str(y + 273)
-                reamur = 'Reamur = ' + str((4/5) * y)
-                return fahrenheit, kelvin, reamur
-            elif x == 'Fahrenheit':
-                celcius = 'Celcius = ' + str((5/9) * (y - 32))
-                kelvin = 'Kelvin = ' + str((5/9) * (y - 32) + 273)
-                reamur = 'Reamur = ' + str((4/9) * (y - 32))
-                return celcius, kelvin, reamur
-            elif x == 'Kelvin':
-                celcius = 'Celcius = ' + str(y - 273)
-                fahrenheit = 'Fahrenheit = ' + str((9/5) * (y - 273) + 32)
-                reamur = 'Reamur = ' + str((4/5) * (y - 273))
-                return celcius, fahrenheit, reamur
-            elif x == 'Reamur':
-                celcius = 'Celcius = ' + str((5/4) * y)
-                fahrenheit = 'Fahrenheit = ' + str((9/4) * y + 273)
-                kelvin = 'Kelvin = ' + str((5/4) * y + 273)
-                return celcius, fahrenheit, kelvin
-            else :        
-                return 0
-
-
-        def main(ev):
-            num = getNum(input.value)
-            result = formula(select.value, num)
-            output0.textContent = result[0]
-            output1.textContent = result[1]
-            output2.textContent = result[2]
-
-        def keyEnter(ev):
-            console.log(f"{ev.code}")
-            traceKey = f"{ev.code}"
-            if traceKey == 'Enter':
-                main(0)
-
-            button.bind('click', main)
-            input.bind("keypress", keyEnter)
-    </script>
+    <script type="text/python"></script>
 </body>
 </html>
